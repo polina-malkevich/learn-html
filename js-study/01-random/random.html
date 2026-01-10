@@ -5,58 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Teaching Example</title>
-    <style>
-        /* CSS: This handles the look and feel */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .card {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            transition: transform 0.2s;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .counter-display {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #2563eb;
-            margin: 1rem 0;
-        }
-
-        #actionBtn {
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 0px;
-            cursor: pointer;
-            transition: background-color 3s;
-        }
-
-
-        #actionBtn:hover {
-            background-color: #1dd855;
-
-        }
-    </style>
 </head>
 
 <body>
@@ -70,52 +20,8 @@
         <button id="actionBtn">Click Me!</button>
     </div>
 
-    <!-- JavaScript: The Logic -->
-    <script>
-        // 1. SELECT ELEMENTS
-        // We grab HTML elements by their ID so JS can talk to them.
-        const counterElement = document.getElementById('counter');
-        const buttonElement = document.getElementById('actionBtn');
-        const messageElement = document.getElementById('message');
-        const cardElement = document.getElementById('mainCard');
-        const maxElement = document.getElementById('maxNumberInput');
 
-        // 2. DEFINE STATE
-        // Variables to keep track of data.
-        let count = 0;
-        const colors = ['#ffffff', '#fff0f0', '#f0fff4', '#f0f8ff', '#fffaf0'];
-
-        // 3. DEFINE FUNCTIONS
-        // A function is a block of code designed to perform a particular task.
-        function updateCounter() {
-            // Increment the count variable
-            let x = maxElement.value;
-            count = getRandomInt(0, x);
-            // Update the HTML text
-            counterElement.textContent = count;
-        }
-
-        function getRandomInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        function updateBackground() {
-            const randomIndex = Math.floor(Math.random() * colors.length);
-            cardElement.style.backgroundColor = colors[randomIndex];
-        }
-
-        // 4. ADD EVENT LISTENERS
-        // This waits for the user to click the button, then runs our code.
-        buttonElement.addEventListener('click', function () {
-            updateCounter();
-            updateBackground();
-            
-            // Log to the browser console (useful for debugging)
-            console.log("Button clicked! Current count: " + count);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
